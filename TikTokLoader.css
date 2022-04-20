@@ -1,0 +1,62 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Load{
+    width: 300px;
+    height: 300px;
+    border: 0.5px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Load .Loader {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.Loader::before,
+.Loader::after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    animation: rotate 1s infinite;
+    content: '';
+    mix-blend-mode: multiply;
+}
+
+.Loader::before {
+    background-color: #fc3f9e;
+}
+
+.Loader::after {
+    background-color: #50e8f3;
+    animation-delay: .5s;
+}
+
+@keyframes rotate {
+    0%,
+    100% {
+        left: 95px;
+    }
+    25% {
+        transform: scale(0.3);
+    }
+    50% {
+        left: 0;
+    }
+    75% {
+        transform: scale(1);
+    }
+}
